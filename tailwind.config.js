@@ -7,7 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        slate: {
+          750: "#243249",
+        },
+      },
     },
   },
   plugins: [],

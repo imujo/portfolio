@@ -1,26 +1,21 @@
 "use client";
 import Button from "@/components/Button";
+import Tag from "@/components/Tag";
 import { cn } from "@/utils/misc";
 import { useState } from "react";
-import { IoSend } from "react-icons/io5";
+import { SiTypescript } from "react-icons/si";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <main className={darkMode ? "dark" : ""}>
       <div className=" dark:bg-slate-800 h-screen flex justify-center items-center">
-        <Button
-          title="Dark Mode"
-          RightIcon={IoSend}
-          variant={"outline"}
-          onClick={() => setDarkMode((prev) => !prev)}
-        />
-        <Button
-          title="Dark Mode"
-          variant="outline"
+        <Tag title="Typescript" LeftIcon={SiTypescript} />
+        <Tag
+          title="Typescript"
+          LeftIcon={SiTypescript}
           size={"small"}
-          RightIcon={IoSend}
-          onClick={() => setDarkMode((prev) => !prev)}
+          href={"https://youtube.com"}
         />
         {/* <img
           src="/blur.png"
