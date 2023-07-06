@@ -18,7 +18,7 @@
 
 .bblur {
   background-image: linear-gradient(-45deg, #059669 50%, #1d4ed8 50%);
-  opacity: 0.4;
+  opacity: 0.3;
   filter: blur(clamp(56px, 10vw, 80px));
 }
 
@@ -26,4 +26,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.dark {
+  color-scheme: dark;
 }
