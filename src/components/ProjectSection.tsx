@@ -56,13 +56,8 @@ const ProjectSection: FC<ProjectSectionProps> = ({
         <ul className="flex gap-2 flex-wrap justify-center xl:justify-start xl:max-w-xs mb-6 ">
           {technologies.slice(0, 4).map((value, i) => {
             return (
-              <li>
-                <Tag
-                  key={i}
-                  title={value.title}
-                  LeftIcon={value.icon}
-                  size="sm"
-                />
+              <li key={i}>
+                <Tag title={value.title} LeftIcon={value.icon} size="sm" />
               </li>
             );
           })}
