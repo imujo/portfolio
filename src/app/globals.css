@@ -15,3 +15,15 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+.bblur {
+  background-image: linear-gradient(-45deg, #059669 50%, #1d4ed8 50%);
+  opacity: 0.4;
+  filter: blur(clamp(56px, 10vw, 80px));
+}
+
+.absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

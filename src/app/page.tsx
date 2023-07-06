@@ -1,26 +1,38 @@
 "use client";
-import Button from "@/components/Button";
-import Tag from "@/components/Tag";
+import ProjectSection from "@/components/ProjectSection";
+import TimelineElement from "@/components/TimelineElement";
 import { cn } from "@/utils/misc";
+import { technologies } from "@/utils/types";
 import { useState } from "react";
-import { SiTypescript } from "react-icons/si";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   return (
-    <main className={darkMode ? "dark" : ""}>
-      <div className=" dark:bg-slate-800 h-screen flex justify-center items-center">
-        <Tag title="Typescript" LeftIcon={SiTypescript} />
-        <Tag
-          title="Typescript"
-          LeftIcon={SiTypescript}
-          size={"small"}
-          href={"https://youtube.com"}
+    <main className={cn(darkMode ? "dark" : "", "px-8 flex justify-center")}>
+      <div className=" dark:bg-slate-800 min-h-screen flex flex-col justify-center w-full max-w-5xl items-center   ">
+        <ProjectSection
+          title="Hair Salon"
+          description="The Hair Salon Website features a home page, pricing page, and contact page for a fictional salon. It provides an overview of services, pricing information, and a means to get in touch."
+          technologies={technologies}
+          githubLink="https://github.com"
+          websiteLink="https://hair-salon-six.vercel.app"
+          phoneImage="/phone.png"
+          tabletImage="/tablet.png"
+          laptopImage="/laptop.png"
+          index={0}
         />
-        {/* <img
-          src="/blur.png"
-          className="fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-[0] pointer-events-none "
-        /> */}
+        <br />
+        <ProjectSection
+          title="Hair Salon"
+          description="The Hair Salon Website features a home page, pricing page, and contact page for a fictional salon. It provides an overview of services, pricing information, and a means to get in touch."
+          technologies={technologies}
+          githubLink="https://github.com"
+          websiteLink="https://hair-salon-six.vercel.app"
+          phoneImage="/phone.png"
+          tabletImage="/tablet.png"
+          laptopImage="/laptop.png"
+          index={0}
+        />
       </div>
     </main>
   );

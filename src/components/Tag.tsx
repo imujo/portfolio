@@ -4,16 +4,16 @@ import { AnchorHTMLAttributes, FC, ReactComponentElement } from "react";
 import { IconType } from "react-icons";
 
 const tagVariants = cva(
-  "flex items-center border-2 text-blue-700 border-blue-700 cursor-pointer bg-blue-50 hover:bg-emerald-50 dark:bg-slate-750 hover:text-emerald-700 hover:border-emerald-700 transition-colors dark:text-blue-600 dark:border-blue-600 dark:hover:border-emerald-600 dark:hover:text-emerald-600 ",
+  "flex items-center  text-blue-700 border-blue-700 cursor-pointer bg-blue-50 hover:bg-emerald-50 dark:bg-slate-750 hover:text-emerald-700 hover:border-emerald-700 transition-colors dark:text-blue-600 dark:border-blue-600 dark:hover:border-emerald-600 dark:hover:text-emerald-600 ",
   {
     variants: {
       size: {
-        large: "gap-2 px-3 py-2 text-base rounded-md",
-        small: "gap-1 px-2 py-1 text-sm rounded",
+        lg: "gap-2 px-3 py-2 text-base rounded-lg border-2",
+        sm: "gap-[2px] px-1 py-[2px] text-xs font-light rounded-lg border-[1px] md:gap-1 md:px-2 md:py-1 md:text-sm",
       },
     },
     defaultVariants: {
-      size: "large",
+      size: "lg",
     },
   }
 );
