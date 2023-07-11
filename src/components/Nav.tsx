@@ -11,7 +11,7 @@ const Nav: FC<NavProps> = ({}) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="h-16 px-6 lg:px-0 max-w-5xl m-auto ">
+    <nav className="h-16 px-6 max-w-5xl m-auto ">
       <div className="flex items-center justify-between h-full ">
         <Link href="/" className="font-semibold min-w-max md:text-lg">
           Ivo Mujo
@@ -23,7 +23,7 @@ const Nav: FC<NavProps> = ({}) => {
 
         <ul
           className={cn(
-            "fixed top-0 left-0 flex dark:bg-slate-700 dark:md:bg-transparent bg-white py-20 px-10 w-screen h-screen gap-10 duration-200 flex-col text-3xl z-10 transition-transform md:translate-x-0 md:flex-row md:text-sm md:gap-10 md:w-full md:h-full md:p-0 md:items-center md:justify-end md:relative md:text-gray-500 dark:md:text-gray-400 font-light hover:[&>li]:text-gray-700 dark:hover:[&>li]:text-gray-200 ",
+            "fixed top-0 left-0 flex dark:bg-slate-700 dark:md:bg-transparent bg-white py-20 px-10 w-screen h-screen gap-10 duration-200 flex-col text-3xl z-10 transition-transform md:translate-x-0 md:flex-row md:text-sm md:gap-10 md:w-full md:h-full md:p-0 md:items-center md:justify-end md:relative md:text-gray-500 dark:md:text-gray-400 font-light hover:[&>li]:text-gray-800 dark:hover:[&>li]:text-gray-200",
             open ? "" : "translate-x-full"
           )}
         >

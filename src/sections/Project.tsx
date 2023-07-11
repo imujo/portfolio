@@ -1,14 +1,14 @@
 import { twoDigitNumber } from "@/utils/misc";
 import { Technology } from "@/utils/types";
 import { FC } from "react";
-import Tag from "./Tag";
+import Tag from "../components/Tag";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 import { FiLink } from "react-icons/fi";
 import Link from "next/link";
 
-interface ProjectSectionProps {
+interface ProjectProps {
   title: string;
   description: string;
   technologies: Technology[];
@@ -20,7 +20,7 @@ interface ProjectSectionProps {
   index: number;
 }
 
-const ProjectSection: FC<ProjectSectionProps> = ({
+const Project: FC<ProjectProps> = ({
   title,
   description,
   technologies,
@@ -112,4 +112,4 @@ const ProjectSection: FC<ProjectSectionProps> = ({
   );
 };
 
-export default ProjectSection;
+export default Project;

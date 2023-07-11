@@ -1,6 +1,9 @@
-import ProjectSection from "@/components/ProjectSection";
-import { technologies } from "@/utils/types";
+import Header from "@/sections/Header";
 
 export default function Home() {
-  return <main className="lg:px-0 px-8  max-w-5xl m-auto">dasfadsa</main>;
+  return (
+    <main className=" px-6  max-w-5xl m-auto h-full">
+      <Header />
+    </main>
+  );
 }
