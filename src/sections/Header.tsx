@@ -17,8 +17,8 @@ const Header: FC<HeaderProps> = ({}) => {
           Full-Stack Web Developer
         </h2>
         <p className=" text-base font-light text-gray-500 text-center dark:text-gray-400 max-w-lg mb-16 lg:text-start">
-          I'm a passionate Full-Stack web developer driven by my love for coding
-          and creating exceptional user experiences
+          I&apos;m a passionate Full-Stack web developer driven by my love for
+          coding and creating exceptional user experiences
         </p>
 
         <div className="flex gap-4">
