@@ -3,6 +3,7 @@ import Tag from "@/components/Tag";
 import TimelineElement from "@/components/TimelineElement";
 import { education, projects, technologies, workExperience } from "@/mockdata";
 import About from "@/sections/About";
+import Contact from "@/sections/Contact";
 import Header from "@/sections/Header";
 import Project from "@/sections/Project";
 
@@ -47,6 +48,7 @@ export default function Home() {
         ))}
       </section>
       <About />
+      <Contact />
     </main>
   );
 }

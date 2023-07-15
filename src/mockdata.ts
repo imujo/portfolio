@@ -1,6 +1,9 @@
 import { IconType } from "react-icons";
 import { BiLogoReact } from "react-icons/bi";
+import { MdEmail } from "react-icons/md";
 import { Technology } from "./utils/types";
+import { AiFillGithub } from "react-icons/ai";
+import { BsLinkedin } from "react-icons/bs";
 
 type WorkExperience = {
   from: string; // format: JUL 2022
@@ -218,5 +221,27 @@ export const projects: Project[] = [
       },
     ],
     githubLink: "https://github.com/example/blog-website",
+  },
+];
+
+type ContactLink = {
+  label: string;
+  Icon?: IconType;
+  href?: string;
+};
+
+export const contactLinks: ContactLink[] = [
+  {
+    label: "ivo.mujo.3@gmail.com",
+    Icon: MdEmail,
+    href: "youtube.com",
+  },
+  {
+    label: "Github",
+    Icon: AiFillGithub,
+  },
+  {
+    label: "LinkedIn",
+    Icon: BsLinkedin,
   },
 ];

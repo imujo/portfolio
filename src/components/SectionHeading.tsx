@@ -13,7 +13,7 @@ const SectionHeading: FC<SectionHeadingProps> = ({
   return (
     <h3
       className={cn(
-        "text-3xl lg:text-4xl font-medium text-gray-800 mb-8",
+        "text-3xl lg:text-4xl font-medium text-gray-800 mb-8 dark:text-white",
         className
       )}
       {...rest}

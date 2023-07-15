@@ -16,11 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className="dar">
       <body className={cn(inter.className, "dark:bg-slate-800")}>
         <Nav />
         {children}
-        <footer className="py-6 mt-12 text-sm font-light text-gray-500 flex justify-center items-center">
+        <footer className="py-6 mt-12 text-sm font-light text-gray-500 flex justify-center items-center dark:text-gray-400">
           © 2023 Ivo Mujo. All rights reserved.
         </footer>
       </body>

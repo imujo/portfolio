@@ -6,7 +6,7 @@ interface AboutProps {}
 
 const About: FC<AboutProps> = ({}) => {
   return (
-    <section className="flex md:[&>*]:flex-1 [&_p]:text-sm gap-12 md:gap-0 [&_p]:text-gray-700 flex-col md:flex-row mt-16 lg:mt-32 ">
+    <section className="flex md:[&>*]:flex-1 [&_p]:text-sm gap-12 md:gap-0 [&_p]:text-gray-700 dark:[&_p]:text-gray-400 flex-col md:flex-row mt-16 lg:mt-32 ">
       <div className="relative">
         <SectionHeading id="about">About me 👈</SectionHeading>
         <p>
@@ -25,10 +25,11 @@ const About: FC<AboutProps> = ({}) => {
           solutions, I am always eager to tackle new challenges and push the
           boundaries of what&apos;s possible.
         </p>
-        <object
-          data="aboutBorder.svg"
-          className="absolute bottom-[-1rem] left-[-1rem] "
-        ></object>
+        <img
+          src="aboutBorder.svg"
+          alt="border"
+          className="absolute bottom-[-1rem] left-[-1rem]"
+        ></img>
       </div>
       <div className="w-full h-64 md:h-auto">
         <div className="relative md:w-4/5 h-full md:ml-auto ">
