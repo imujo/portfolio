@@ -31,12 +31,12 @@ const Project: FC<ProjectProps> = ({
   laptopImage,
   index,
 }) => {
-  const scale = 2;
-  console.log({
-    phone: `h: ${156 * scale} w: ${78 * scale}`,
-    tablet: `h: ${217 * scale} w: ${215 * scale}`,
-    laptop: `h: ${145 * scale} w: ${110 * scale}`,
-  });
+  // const scale = 2;
+  // console.log({
+  //   phone: `h: ${156 * scale} w: ${78 * scale}`,
+  //   tablet: `h: ${217 * scale} w: ${215 * scale}`,
+  //   laptop: `h: ${145 * scale} w: ${110 * scale}`,
+  // });
   return (
     <section className="h-screen  w-full flex flex-col xl:flex-row xl:justify-between items-center justify-center ">
       {/* <span className="absolute top-6 left-6 font-black text-lg xl:text-xl xl:top-8 xl:left-8 ">
@@ -57,7 +57,12 @@ const Project: FC<ProjectProps> = ({
           {technologies.slice(0, 4).map((value, i) => {
             return (
               <li key={i}>
-                <Tag title={value.title} LeftIcon={value.icon} size="sm" />
+                <Tag
+                  title={value.title}
+                  LeftIcon={value.icon}
+                  href={value.href}
+                  size="sm"
+                />
               </li>
             );
           })}
@@ -69,6 +74,7 @@ const Project: FC<ProjectProps> = ({
             <li>
               <a
                 href={githubLink}
+                target="_blank"
                 className="flex items-center gap-2 text-gray-800 dark:text-gray-300 text-sm"
               >
                 <BsGithub /> Github
@@ -79,6 +85,7 @@ const Project: FC<ProjectProps> = ({
             <li>
               <a
                 href={websiteLink}
+                target="_blank"
                 className="flex items-center gap-2 text-gray-800 dark:text-gray-300 text-sm"
               >
                 Website <BiLinkExternal />

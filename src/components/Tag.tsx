@@ -8,12 +8,11 @@ const tagVariants = cva(
   {
     variants: {
       size: {
-        lg: "gap-2 px-3 py-2 text-base rounded-lg border-2",
         sm: "gap-[2px] px-1 py-[2px] text-xs font-light rounded-lg border-[1px] md:gap-1 md:px-2 md:py-1 md:text-sm",
       },
     },
     defaultVariants: {
-      size: "lg",
+      size: "sm",
     },
   }
 );

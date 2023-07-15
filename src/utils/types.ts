@@ -3,24 +3,6 @@ import { SiTypescript } from "react-icons/si";
 
 export type Technology = {
   title: string;
-  icon: IconType;
+  icon?: IconType;
+  href?: string;
 };
-
-export const technologies: Technology[] = [
-  {
-    title: "Typescript",
-    icon: SiTypescript,
-  },
-  {
-    title: "Typescript",
-    icon: SiTypescript,
-  },
-  {
-    title: "Typescript",
-    icon: SiTypescript,
-  },
-  {
-    title: "Typescript",
-    icon: SiTypescript,
-  },
-];

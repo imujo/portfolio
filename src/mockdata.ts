@@ -1,3 +1,7 @@
+import { IconType } from "react-icons";
+import { BiLogoReact } from "react-icons/bi";
+import { Technology } from "./utils/types";
+
 type WorkExperience = {
   from: string; // format: JUL 2022
   to: string; // format: SEP 2022
@@ -46,6 +50,12 @@ export const workExperience: WorkExperience[] = [
   },
 ];
 
+type Technologies = {
+  title: string; // Programming language / tool name
+  LeftIcon?: IconType; // An acording icon from React Icons
+  href?: string; // link to the technologies website
+};
+
 export const education: Education[] = [
   {
     from: "JUL 2018",
@@ -64,5 +74,149 @@ export const education: Education[] = [
     link: "https://www.xyzonlinecourses.com",
     description:
       "Learned the fundamentals of machine learning and applied them to real-world datasets.",
+  },
+];
+
+export const technologies: Technologies[] = [
+  {
+    title: "JavaScript",
+    LeftIcon: BiLogoReact,
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    title: "HTML",
+    LeftIcon: BiLogoReact,
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    title: "CSS",
+    LeftIcon: BiLogoReact,
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  {
+    title: "React",
+    LeftIcon: BiLogoReact,
+    href: "https://reactjs.org/",
+  },
+  {
+    title: "Node.js",
+    LeftIcon: BiLogoReact,
+    href: "https://nodejs.org/",
+  },
+  {
+    title: "Python",
+    LeftIcon: BiLogoReact,
+    href: "https://www.python.org/",
+  },
+  {
+    title: "Java",
+    LeftIcon: BiLogoReact,
+    href: "https://www.java.com/",
+  },
+  {
+    title: "C++",
+    LeftIcon: BiLogoReact,
+    href: "https://en.cppreference.com/w/cpp",
+  },
+  {
+    title: "Git",
+    LeftIcon: BiLogoReact,
+    href: "https://git-scm.com/",
+  },
+  {
+    title: "MongoDB",
+    LeftIcon: BiLogoReact,
+    href: "https://www.mongodb.com/",
+  },
+  {
+    title: "SQL",
+    LeftIcon: BiLogoReact,
+    href: "https://en.wikipedia.org/wiki/SQL",
+  },
+  {
+    title: "AWS",
+    LeftIcon: BiLogoReact,
+    href: "https://aws.amazon.com/",
+  },
+];
+
+type Project = {
+  title: string;
+  description: string; // 1 paragraph
+  technologies: Technology[]; // list of technologies from above
+  githubLink?: string;
+  websiteLink?: string; // link to live website
+};
+
+export const projects: Project[] = [
+  {
+    title: "E-commerce Website",
+    description:
+      "An online store that allows users to browse and purchase products. It includes features such as user authentication, product search, and shopping cart functionality.",
+    technologies: [
+      { title: "React", icon: BiLogoReact, href: "https://reactjs.org/" },
+      { title: "Node.js", icon: BiLogoReact, href: "https://nodejs.org/" },
+      { title: "MongoDB", icon: BiLogoReact, href: "https://www.mongodb.com/" },
+    ],
+    githubLink: "https://github.com/example/ecommerce-project",
+    websiteLink: "https://www.examplestore.com",
+  },
+  {
+    title: "Task Manager App",
+    description:
+      "A web application for managing tasks and to-do lists. Users can create, edit, and mark tasks as complete. It also includes user registration and login functionality.",
+    technologies: [
+      { title: "Vue.js", icon: BiLogoReact, href: "https://vuejs.org/" },
+      {
+        title: "Firebase",
+        icon: BiLogoReact,
+        href: "https://firebase.google.com/",
+      },
+      {
+        title: "CSS",
+        icon: BiLogoReact,
+        href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      },
+    ],
+    githubLink: "https://github.com/example/task-manager",
+  },
+  {
+    title: "Weather App",
+    description:
+      "A weather application that provides current weather conditions and forecasts for different locations. Users can search for a location and view details such as temperature, humidity, and wind speed.",
+    technologies: [
+      { title: "React", icon: BiLogoReact, href: "https://reactjs.org/" },
+      { title: "OpenWeatherMap API", href: "https://openweathermap.org/api" },
+      {
+        title: "HTML",
+        icon: BiLogoReact,
+        href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      },
+    ],
+    githubLink: "https://github.com/example/weather-app",
+    websiteLink: "https://www.exampleweatherapp.com",
+  },
+  {
+    title: "Blog Website",
+    description:
+      "A blogging platform where users can create, publish, and manage blog posts. It includes features such as user authentication, commenting, and categories.",
+    technologies: [
+      {
+        title: "Django",
+        icon: BiLogoReact,
+        href: "https://www.djangoproject.com/",
+      },
+      {
+        title: "PostgreSQL",
+        icon: BiLogoReact,
+        href: "https://www.postgresql.org/",
+      },
+      {
+        title: "Bootstrap",
+        icon: BiLogoReact,
+        href: "https://getbootstrap.com/",
+      },
+    ],
+    githubLink: "https://github.com/example/blog-website",
   },
 ];

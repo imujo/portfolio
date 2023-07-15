@@ -25,7 +25,9 @@ const TimelineElement: FC<TimelineElementProps> = ({
   ...rest
 }) => {
   return (
-    <div
+    <a
+      href={link}
+      target="_blank"
       className={cn(
         "flex flex-col p-6 relative rounded-2xl hover:shadow-md [&>h4]:hover:text-blue-700 dark:shadow-white/10 dark:[&>h4]:hover:text-blue-600 transition-all cursor-pointer ml-10 ",
         className
@@ -54,7 +56,7 @@ const TimelineElement: FC<TimelineElementProps> = ({
         )}
       ></div>
       <div className="w-4 h-4 rounded-full bg-emerald-600 absolute left-[-22px] translate-x-[-35%] top-[14%]"></div>
-    </div>
+    </a>
   );
 };
 
