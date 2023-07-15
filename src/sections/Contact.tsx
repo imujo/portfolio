@@ -7,7 +7,7 @@ interface ContactProps {}
 const Contact: FC<ContactProps> = ({}) => {
   return (
     <section className="mt-16 lg:mt-32 bg-blue-50 dark:bg-slate-700 ring-[1px] ring-blue-200 shadow-inner   dark:ring-slate-500 flex flex-col items-center px-4 py-8 lg:py-16 rounded-lg">
-      <SectionHeading className="mb-4" id="Contact">
+      <SectionHeading className="mb-4" id="contact">
         Contact
       </SectionHeading>
       <span className="text-center text-gray-400 mb-8">

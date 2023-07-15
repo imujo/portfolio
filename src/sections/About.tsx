@@ -38,7 +38,7 @@ const About: FC<AboutProps> = ({}) => {
               "https://lp-cms-production.imgix.net/2021-06/shutterstockRF_662032261.jpg"
             }
             alt={"me"}
-            className="z-[10] rounded-lg object-cover "
+            className="z-[2] rounded-lg object-cover "
             fill
           />
           <div className="absolute h-full w-full rounded-lg bg-emerald-600 bottom-[-1rem] md:left-[-1rem] "></div>

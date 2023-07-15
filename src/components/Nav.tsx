@@ -11,7 +11,7 @@ const Nav: FC<NavProps> = ({}) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="h-16 px-6 max-w-5xl m-auto ">
+    <nav className="h-16 px-6 z-[999999] max-w-5xl m-auto ">
       <div className="flex items-center justify-between h-full ">
         <Link href="/" className="font-semibold min-w-max md:text-lg">
           Ivo Mujo
