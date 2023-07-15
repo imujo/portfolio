@@ -7,7 +7,7 @@ interface HeaderProps {}
 
 const Header: FC<HeaderProps> = ({}) => {
   return (
-    <header className="relative flex flex-col py-12 gap-16 items-center  h-[calc(100vh-4rem)] lg:flex-row-reverse lg:justify-between lg:items-center  ">
+    <header className="relative flex flex-col py-12 gap-12 lg:gap-16 items-center  h-[calc(100vh-4rem)] lg:flex-row-reverse lg:justify-between lg:items-center min-h-[800px] lg:min-h-fit  ">
       <HeaderImage />
       <div className="flex flex-col items-center lg:items-start">
         <h1 className=" text-6xl font-bold text-center text-gray-800 mb-4 dark:text-white lg:text-start ">

@@ -5,7 +5,7 @@ interface HeaderImageProps {}
 // TODO try to make it with Next Image
 const HeaderImage: FC<HeaderImageProps> = ({}) => {
   return (
-    <div className="relative h-56 w-56 rounded-full headerImageBg flex lg:h-[420px] lg:w-[420px] md:h-64 md:w-64 overflow-visible ">
+    <div className="relative h-44 w-44 rounded-full headerImageBg flex lg:h-[420px] lg:w-[420px] md:h-64 md:w-64 overflow-visible ">
       <img
         src="/header_img.png"
         alt="portrait"

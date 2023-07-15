@@ -20,6 +20,9 @@ export default function RootLayout({
       <body className={cn(inter.className, "dark:bg-slate-800")}>
         <Nav />
         {children}
+        <footer className="py-6 mt-12 text-sm font-light text-gray-500 flex justify-center items-center">
+          © 2023 Ivo Mujo. All rights reserved.
+        </footer>
       </body>
     </html>
   );

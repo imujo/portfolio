@@ -6,9 +6,9 @@ interface TimelineElementProps {
   from: string;
   to: string;
   title: string;
-  company: string;
+  subtitle: string;
   link: string;
-  index: number;
+  first?: boolean;
   description?: string;
   className?: string;
 }
@@ -17,17 +17,17 @@ const TimelineElement: FC<TimelineElementProps> = ({
   from,
   to,
   title,
-  company,
+  subtitle,
   link,
   description,
   className,
-  index,
+  first,
   ...rest
 }) => {
   return (
     <div
       className={cn(
-        "flex flex-col p-6 relative rounded-2xl hover:shadow-md [&>h4]:hover:text-blue-700 dark:shadow-white/10 dark:[&>h4]:hover:text-blue-600 transition-all cursor-pointer ",
+        "flex flex-col p-6 relative rounded-2xl hover:shadow-md [&>h4]:hover:text-blue-700 dark:shadow-white/10 dark:[&>h4]:hover:text-blue-600 transition-all cursor-pointer ml-10 ",
         className
       )}
       {...rest}
@@ -35,9 +35,9 @@ const TimelineElement: FC<TimelineElementProps> = ({
       <span className="mb-3 font-semibold text-sm text-gray-400 ">
         {from} - {to}
       </span>
-      <h4 className="flex items-center gap-[6px] mb-2 font-medium text-base text-gray-800 dark:text-white transition-colors">
-        {title} · {company}
-        <i>
+      <h4 className=" gap-[6px] mb-2 font-medium text-base text-gray-800 dark:text-white transition-colors">
+        {title} · {subtitle}
+        <i className="inline-block align-middle mb-[2px] ml-1">
           <BiLinkExternal />
         </i>
       </h4>
@@ -50,7 +50,7 @@ const TimelineElement: FC<TimelineElementProps> = ({
       <div
         className={cn(
           "w-1 bg-emerald-600 absolute left-[-22px] bottom-0",
-          index == 0 ? "h-[86%]" : "h-full"
+          first ? "h-[86%]" : "h-full"
         )}
       ></div>
       <div className="w-4 h-4 rounded-full bg-emerald-600 absolute left-[-22px] translate-x-[-35%] top-[14%]"></div>
