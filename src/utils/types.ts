@@ -26,3 +26,9 @@ export type About = {
   description: string;
   image: string;
 };
+
+export type Contact = {
+  title: string;
+  url: string;
+  icon: string;
+};

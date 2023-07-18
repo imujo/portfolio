@@ -48,3 +48,13 @@ export interface AboutData {
     };
   };
 }
+
+export interface ContactData {
+  data: {
+    attributes: {
+      title: string;
+      url: string;
+      icon: ImageData;
+    };
+  }[];
+}

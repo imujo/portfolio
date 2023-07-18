@@ -2,12 +2,13 @@ import { technologies } from "@/mockdata";
 import request from "../utils/request";
 import {
   AboutData,
+  ContactData,
   EducationData,
   ExperienceData,
   HeaderData,
   TechnologiesData,
 } from "./types";
-import { About } from "@/utils/types";
+import { About, Contact } from "@/utils/types";
 import { getFullFileUrl } from "@/utils/misc";
 
 // TODO add validation
@@ -54,4 +55,18 @@ export async function getTechnologies() {
   });
 
   return technologies;
+}
+
+export async function getContact() {
+  const contactData = await request<ContactData>("/contacts?populate=*");
+
+  const contacts: Contact[] = contactData.data.map((contact) => {
+    return {
+      url: contact.attributes.url,
+      title: contact.attributes.title,
+      icon: getFullFileUrl(contact.attributes.icon.data.attributes.url),
+    };
+  });
+
+  return contacts;
 }
