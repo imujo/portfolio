@@ -10,6 +10,7 @@ import {
   getAbout,
   getEducation,
   getExperience,
+  getProjects,
   getTechnologies,
 } from "@/server/functions";
 
@@ -17,6 +18,7 @@ export default async function Home() {
   const experience = await getExperience();
   const education = await getEducation();
   const technologies = await getTechnologies();
+  const projects = await getProjects();
 
   return (
     <main className=" px-6  max-w-5xl m-auto h-full">
@@ -52,14 +54,7 @@ export default async function Home() {
       <section className="mt-16 lg:mt-32">
         <SectionHeading id="projects">Projects</SectionHeading>
         {projects.map((project, i) => (
-          <Project
-            phoneImage={""}
-            tabletImage={""}
-            laptopImage={""}
-            index={i}
-            {...project}
-            key={i}
-          />
+          <Project index={i} {...project} key={i} />
         ))}
       </section>
       <About />

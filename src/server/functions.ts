@@ -6,9 +6,10 @@ import {
   EducationData,
   ExperienceData,
   HeaderData,
+  ProjectsData,
   TechnologiesData,
 } from "./types";
-import { About, Contact } from "@/utils/types";
+import { About, Contact, Project, Technology } from "@/utils/types";
 import { getFullFileUrl } from "@/utils/misc";
 
 // TODO add validation
@@ -41,7 +42,7 @@ export async function getEducation() {
   return education;
 }
 
-export async function getTechnologies() {
+export async function getTechnologies(): Promise<Technology[]> {
   const technologiesData = await request<TechnologiesData>(
     "/technologies?populate=*"
   );
@@ -69,4 +70,39 @@ export async function getContact() {
   });
 
   return contacts;
+}
+
+export async function getProjects() {
+  const projectsData = await request<ProjectsData>("/projects?populate=deep");
+
+  const projects: Project[] = projectsData.data.map((project) => {
+    return {
+      title: project.attributes.title,
+      description: project.attributes.description,
+      githubLink: project.attributes.githubLink,
+      websiteLink: project.attributes.websiteLink,
+      technologies: project.attributes.technologies.data.map(
+        (technologyData) => {
+          return {
+            href: "", // TODO add to strapi and here
+            title: technologyData.attributes.title,
+            icon: getFullFileUrl(
+              technologyData.attributes.icon.data.attributes.url
+            ),
+          };
+        }
+      ),
+      phoneImage: getFullFileUrl(
+        project.attributes.phoneImage.data.attributes.url
+      ),
+      tabletImage: getFullFileUrl(
+        project.attributes.tabletImage.data.attributes.url
+      ),
+      laptopImage: getFullFileUrl(
+        project.attributes.laptopImage.data.attributes.url
+      ),
+    };
+  });
+
+  return projects;
 }

@@ -1,5 +1,5 @@
 import { twoDigitNumber } from "@/utils/misc";
-import { Technology } from "@/utils/types";
+import { Project as ProjectType, Technology } from "@/utils/types";
 import { FC } from "react";
 import Tag from "../components/Tag";
 import Image from "next/image";
@@ -8,15 +8,7 @@ import { BiLinkExternal } from "react-icons/bi";
 import { FiLink } from "react-icons/fi";
 import Link from "next/link";
 
-interface ProjectProps {
-  title: string;
-  description: string;
-  technologies: Technology[];
-  githubLink?: string;
-  websiteLink?: string;
-  phoneImage: string;
-  tabletImage: string;
-  laptopImage: string;
+interface ProjectProps extends ProjectType {
   index: number;
 }
 

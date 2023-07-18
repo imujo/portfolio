@@ -1,8 +1,6 @@
-import { IconType } from "react-icons";
-
 export type Technology = {
   title: string;
-  icon?: IconType;
+  icon?: string;
   href?: string;
 };
 
@@ -31,4 +29,15 @@ export type Contact = {
   title: string;
   url: string;
   icon: string;
+};
+
+export type Project = {
+  title: string;
+  description: string;
+  githubLink?: string;
+  websiteLink?: string;
+  technologies: Technology[];
+  phoneImage: string;
+  tabletImage: string;
+  laptopImage: string;
 };

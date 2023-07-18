@@ -58,3 +58,18 @@ export interface ContactData {
     };
   }[];
 }
+
+export interface ProjectsData {
+  data: {
+    attributes: {
+      title: string;
+      description: string;
+      githubLink?: string;
+      websiteLink?: string;
+      technologies: TechnologiesData;
+      phoneImage: ImageData;
+      tabletImage: ImageData;
+      laptopImage: ImageData;
+    };
+  }[];
+}
