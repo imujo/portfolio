@@ -21,3 +21,8 @@ export type Timeline = {
   description?: string;
   link?: string;
 };
+
+export type About = {
+  description: string;
+  image: string;
+};

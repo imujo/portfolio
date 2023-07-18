@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: { domains: ["lp-cms-production.imgix.net"] },
+  images: { domains: ["localhost"] },
 };
 
 module.exports = nextConfig;

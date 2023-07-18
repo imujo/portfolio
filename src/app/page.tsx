@@ -7,6 +7,7 @@ import Contact from "@/sections/Contact";
 import Header from "@/sections/Header";
 import Project from "@/sections/Project";
 import {
+  getAbout,
   getEducation,
   getExperience,
   getTechnologies,
@@ -16,6 +17,7 @@ export default async function Home() {
   const experience = await getExperience();
   const education = await getEducation();
   const technologies = await getTechnologies();
+
   return (
     <main className=" px-6  max-w-5xl m-auto h-full">
       <Header />

@@ -39,7 +39,6 @@ const Tag: FC<TagProps> = ({
 }) => {
   let LeftIconComponent;
   let RightIconComponent;
-  console.log(LeftIcon);
 
   if (typeof LeftIcon == "string") {
     LeftIconComponent = <Icon src={LeftIcon} className=" w-[14px] h-[14px]" />;

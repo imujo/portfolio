@@ -39,3 +39,12 @@ export interface TechnologiesData {
     };
   }[];
 }
+
+export interface AboutData {
+  data: {
+    attributes: {
+      description: string;
+      image: ImageData;
+    };
+  };
+}

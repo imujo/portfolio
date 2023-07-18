@@ -1,11 +1,14 @@
 import { technologies } from "@/mockdata";
 import request from "../utils/request";
 import {
+  AboutData,
   EducationData,
   ExperienceData,
   HeaderData,
   TechnologiesData,
 } from "./types";
+import { About } from "@/utils/types";
+import { getFullFileUrl } from "@/utils/misc";
 
 // TODO add validation
 
@@ -13,6 +16,14 @@ export async function getHeader() {
   const headerData = await request<HeaderData>("/header");
   const header = headerData.data.attributes;
   return header;
+}
+
+export async function getAbout(): Promise<About> {
+  const headerData = await request<AboutData>("/about?populate=*");
+  return {
+    description: headerData.data.attributes.description,
+    image: getFullFileUrl(headerData.data.attributes.image.data.attributes.url),
+  };
 }
 
 export async function getExperience() {
@@ -38,10 +49,7 @@ export async function getTechnologies() {
     return {
       href: "", // TODO add to strapi and here
       title: technologyData.attributes.title,
-      icon: new URL(
-        technologyData.attributes.icon.data.attributes.url,
-        process.env.FILES_SERVER_ENDPOINT as string
-      ).href,
+      icon: getFullFileUrl(technologyData.attributes.icon.data.attributes.url),
     };
   });
 

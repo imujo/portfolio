@@ -8,3 +8,7 @@ export function cn(...classes: ClassValue[]) {
 export function twoDigitNumber(number: number) {
   return number < 10 ? "0" + number : "" + number;
 }
+
+export function getFullFileUrl(url: string) {
+  return new URL(url, process.env.FILES_SERVER_ENDPOINT as string).href;
+}
