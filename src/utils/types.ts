@@ -1,8 +1,23 @@
 import { IconType } from "react-icons";
-import { SiTypescript } from "react-icons/si";
 
 export type Technology = {
   title: string;
   icon?: IconType;
   href?: string;
+};
+
+export type Header = {
+  name: string;
+  position: string;
+  description: string;
+};
+
+export type Timeline = {
+  id: number;
+  from: string;
+  to: string;
+  title: string;
+  subtitle: string;
+  description?: string;
+  link?: string;
 };

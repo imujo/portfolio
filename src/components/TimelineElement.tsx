@@ -1,19 +1,15 @@
 import { cn } from "@/utils/misc";
+import { Timeline } from "@/utils/types";
 import { FC } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 
-interface TimelineElementProps {
-  from: string;
-  to: string;
-  title: string;
-  subtitle: string;
-  link: string;
+interface TimelineElementProps extends Timeline {
   first?: boolean;
-  description?: string;
   className?: string;
 }
 
 const TimelineElement: FC<TimelineElementProps> = ({
+  id,
   from,
   to,
   title,
@@ -26,7 +22,7 @@ const TimelineElement: FC<TimelineElementProps> = ({
 }) => {
   return (
     <a
-      href={link}
+      href={link || ""}
       target="_blank"
       className={cn(
         "flex flex-col p-6 relative rounded-2xl hover:shadow-md [&>h4]:hover:text-blue-700 dark:shadow-white/10 dark:[&>h4]:hover:text-blue-600 transition-all cursor-pointer ml-10 ",

@@ -1,20 +1,28 @@
 import SectionHeading from "@/components/SectionHeading";
 import Tag from "@/components/Tag";
 import TimelineElement from "@/components/TimelineElement";
-import { education, projects, technologies, workExperience } from "@/mockdata";
+import { projects, technologies } from "@/mockdata";
 import About from "@/sections/About";
 import Contact from "@/sections/Contact";
 import Header from "@/sections/Header";
 import Project from "@/sections/Project";
+import {
+  getEducation,
+  getExperience,
+  getTechnologies,
+} from "@/server/functions";
 
-export default function Home() {
+export default async function Home() {
+  const experience = await getExperience();
+  const education = await getEducation();
+  const technologies = await getTechnologies();
   return (
     <main className=" px-6  max-w-5xl m-auto h-full">
       <Header />
       <section className="flex lg:[&>div]:flex-1 gap-4 lg:items-start lg:justify-between flex-col lg:flex-row lg:mt-8   ">
         <div>
           <SectionHeading id="experience">Experience</SectionHeading>
-          {workExperience.map((element, i) => {
+          {experience.map((element, i) => {
             return <TimelineElement {...element} first={i === 0} key={i} />;
           })}
         </div>
@@ -29,7 +37,12 @@ export default function Home() {
         <SectionHeading id="technologies">Technologies</SectionHeading>
         <div className=" flex flex-wrap gap-2 lg:gap-3">
           {technologies.map((tech, i) => (
-            <Tag {...tech} key={i} />
+            <Tag
+              title={tech.title}
+              href={tech.href}
+              LeftIcon={tech.icon}
+              key={i}
+            />
           ))}
         </div>
       </section>
