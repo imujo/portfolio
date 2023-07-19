@@ -4,6 +4,7 @@ import Button from "./Button";
 import { AiOutlineMenu } from "react-icons/ai";
 import { cn } from "@/utils/misc";
 import Link from "next/link";
+import ThemeSwitch from "./ThemeSwitch";
 
 interface NavProps {}
 
@@ -27,6 +28,9 @@ const Nav: FC<NavProps> = ({}) => {
             open ? "" : "translate-x-full"
           )}
         >
+          <li>
+            <ThemeSwitch />
+          </li>
           <li onClick={() => setOpen(false)}>
             <a href="#experience">Experience</a>
           </li>

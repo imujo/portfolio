@@ -2,6 +2,7 @@ import { cn } from "@/utils/misc";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Nav from "@/components/Nav";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dar">
       <body className={cn(inter.className, "dark:bg-slate-800")}>
-        <Nav />
-        {children}
-        <footer className="py-6 mt-12 text-sm font-light text-gray-500 flex justify-center items-center dark:text-gray-400">
-          © 2023 Ivo Mujo. All rights reserved.
-        </footer>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Nav />
+          {children}
+          <footer className="py-6 mt-12 text-sm font-light text-gray-500 flex justify-center items-center dark:text-gray-400">
+            © 2023 Ivo Mujo. All rights reserved.
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
