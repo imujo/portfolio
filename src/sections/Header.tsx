@@ -24,12 +24,12 @@ const Header: FC<HeaderProps> = async ({}) => {
         </p>
 
         <div className="flex gap-4">
-          {/* <a href="#contact"> */}
-          <Button title="Contact me" RightIcon={IoSend} />
-          {/* </a> */}
-          {/* <a href="#projects"> */}
-          <Button title="See my work" variant="outline" />
-          {/* </a> */}
+          <a href="#contact" className="flex">
+            <Button title="Contact me" RightIcon={IoSend} />
+          </a>
+          <a href="#projects">
+            <Button title="See my work" variant="outline" />
+          </a>
         </div>
       </div>
       <div className="w-3/5 h-3/5 z-[-1] absolute absolute-center bblur2"></div>

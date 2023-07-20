@@ -36,6 +36,7 @@ export interface TechnologiesData {
     attributes: {
       title: string;
       icon: ImageData;
+      href: string;
     };
   }[];
 }

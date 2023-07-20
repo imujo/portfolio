@@ -21,7 +21,7 @@ const Contact: FC<ContactProps> = async ({}) => {
           key={i}
           href={url}
           target="_blank"
-          className="text-gray-600 dark:text-gray-300 flex gap-2 items-center text-lg mb-4 "
+          className="text-gray-600 dark:text-gray-300 fill-gray-600 dark:fill-gray-300 flex gap-2 items-center text-lg mb-4 "
         >
           <Icon src={icon} className=" w-[14px] h-[14px]" />
           {title}

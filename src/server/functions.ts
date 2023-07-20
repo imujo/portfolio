@@ -21,10 +21,10 @@ export async function getHeader() {
 }
 
 export async function getAbout(): Promise<About> {
-  const headerData = await request<AboutData>("/about?populate=*");
+  const aboutData = await request<AboutData>("/about?populate=*");
   return {
-    description: headerData.data.attributes.description,
-    image: getFullFileUrl(headerData.data.attributes.image.data.attributes.url),
+    description: aboutData.data.attributes.description,
+    image: getFullFileUrl(aboutData.data.attributes.image.data.attributes.url),
   };
 }
 
@@ -49,7 +49,7 @@ export async function getTechnologies(): Promise<Technology[]> {
 
   const technologies = technologiesData.data.map((technologyData) => {
     return {
-      href: "", // TODO add to strapi and here
+      href: technologyData.attributes.href,
       title: technologyData.attributes.title,
       icon: getFullFileUrl(technologyData.attributes.icon.data.attributes.url),
     };
@@ -84,7 +84,7 @@ export async function getProjects() {
       technologies: project.attributes.technologies.data.map(
         (technologyData) => {
           return {
-            href: "", // TODO add to strapi and here
+            href: technologyData.attributes.href,
             title: technologyData.attributes.title,
             icon: getFullFileUrl(
               technologyData.attributes.icon.data.attributes.url
