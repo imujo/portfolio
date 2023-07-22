@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <main className=" px-6  max-w-5xl m-auto h-full">
-      <div className="snap-start snap-always scroll-mt-16 pb-64">
+      <div className="snap-start snap-always scroll-mt-[59px] pb-64">
         <Header />
         <section className="flex lg:[&>div]:flex-1 gap-4 lg:items-start lg:justify-between flex-col lg:flex-row lg:mt-8   ">
           <div>
@@ -38,7 +38,9 @@ export default async function Home() {
           </div>
         </section>
         <section className="mt-16 lg:mt-32">
-          <SectionHeading id="technologies">Technologies</SectionHeading>
+          <SectionHeading id="technologies" className=" scroll-mt-[50vh]">
+            Technologies
+          </SectionHeading>
           <div className=" flex flex-wrap gap-2 lg:gap-3">
             {technologies.map((tech, i) => (
               <Tag

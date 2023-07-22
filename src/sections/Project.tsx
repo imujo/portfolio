@@ -40,12 +40,6 @@ const Project: FC<ProjectProps> = ({
   const phoneParallax = useParallax(scrollYProgress, 200);
   const tabletParallax = useParallax(scrollYProgress, 600);
   const laptopParallax = useParallax(scrollYProgress, 500);
-  // const opacity = useOpacity(scrollYProgress);
-  const opacity = 1;
-
-  useMotionValueEvent(scrollYProgress, "change", (value) => {
-    console.log(title, value);
-  });
 
   // const scale = 2;
   // console.log({
@@ -114,22 +108,22 @@ const Project: FC<ProjectProps> = ({
 
         <div className="relative h-[200px] w-full mt-[10%] sm:h-[300px] xl:w-[600px] xl:mt-0">
           <motion.div
-            style={{ y: phoneParallax, x: "-220%", opacity }}
+            style={{ y: phoneParallax, x: "-220%", zIndex: 1 }}
             className="phone "
           >
-            <Image src="/phonem.png" alt="phone" fill />
+            <Image src={phoneImage} alt="phone" fill />
           </motion.div>
           <motion.div
-            style={{ y: laptopParallax, x: "-50%", opacity }}
+            style={{ y: laptopParallax, x: "-50%", zIndex: 2 }}
             className=" laptop"
           >
-            <Image src="/laptopm.png" alt="laptop" fill />
+            <Image src={laptopImage} alt="laptop" fill />
           </motion.div>
           <motion.div
-            style={{ y: tabletParallax, x: "55%", opacity }}
+            style={{ y: tabletParallax, x: "55%", zIndex: 3 }}
             className="tablet  "
           >
-            <Image src="/tabletm.png" alt="tablet" fill />
+            <Image src={tabletImage} alt="tablet" fill />
           </motion.div>
           <div className="w-4/5 h-4/5 absolute top-0 left-0 absolute-center bblur"></div>
         </div>
