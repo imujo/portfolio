@@ -50,7 +50,7 @@ export async function getTechnologies(): Promise<Technology[]> {
     return {
       href: technologyData.attributes.href,
       title: technologyData.attributes.title,
-      icon: getFullFileUrl(technologyData.attributes.icon.data.attributes.url),
+      icon: getFullFileUrl(technologyData.attributes.icon.data?.attributes.url),
     };
   });
 
