@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="snap-y snap-mandatory ">
       <body className={cn(inter.className, "dark:bg-slate-800")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Nav />

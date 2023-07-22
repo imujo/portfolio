@@ -9,7 +9,7 @@ const About: FC<AboutProps> = async () => {
   const { description, image } = await getAbout();
 
   return (
-    <section className="flex md:[&>*]:flex-1 [&_p]:text-sm gap-12 md:gap-0 [&_p]:text-gray-700 dark:[&_p]:text-gray-400 flex-col md:flex-row mt-16 lg:mt-32 ">
+    <section className="flex md:[&>*]:flex-1 [&_p]:text-sm [&_p]:leading-relaxed gap-12 md:gap-0 [&_p]:text-gray-700 dark:[&_p]:text-gray-400 flex-col md:flex-row mt-16 lg:mt-32 ">
       <div className="relative">
         <SectionHeading id="about">About me 👈</SectionHeading>
         <p>{description}</p>

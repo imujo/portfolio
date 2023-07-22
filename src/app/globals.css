@@ -18,7 +18,7 @@
 
 .bblur {
   background-image: linear-gradient(-45deg, #059669 50%, #1d4ed8 50%);
-  opacity: 0.25;
+  opacity: 0.15;
   filter: blur(clamp(56px, 10vw, 80px));
 }
 
@@ -45,4 +45,94 @@
 
 .headerImageBg {
   background: linear-gradient(206deg, #accee2 0%, #82cbb4 100%);
+}
+
+.phone {
+  /* Basic positioning */
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  z-index: 10;
+
+  /* Width and height */
+  height: 124px;
+  width: 62px;
+
+  /* Responsive width and height */
+  @media (min-width: 640px) {
+    height: 161px;
+    width: 80px;
+  }
+
+  @media (min-width: 768px) {
+    height: 210px;
+    width: 105px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 248px;
+    width: 124px;
+  }
+}
+
+.laptop {
+  /* Basic positioning */
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  z-index: 20;
+
+  /* Width and height */
+  width: 215px;
+  height: 217px;
+
+  /* Responsive width and height */
+  @media (min-width: 640px) {
+    /* sm */
+    width: 280px;
+    height: 282px;
+  }
+
+  @media (min-width: 768px) {
+    /* md */
+    width: 365px;
+    height: 368px;
+  }
+
+  @media (min-width: 1280px) {
+    /* xl */
+    width: 430px;
+    height: 434px;
+  }
+}
+
+.tablet {
+  /* Basic positioning */
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  z-index: 30;
+
+  /* Width and height */
+  width: 110px;
+  height: 145px;
+
+  /* Responsive width and height */
+  @media (min-width: 640px) {
+    /* sm */
+    width: 143px;
+    height: 188px;
+  }
+
+  @media (min-width: 768px) {
+    /* md */
+    width: 187px;
+    height: 246px;
+  }
+
+  @media (min-width: 1280px) {
+    /* xl */
+    width: 220px;
+    height: 290px;
+  }
 }
