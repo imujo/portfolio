@@ -1,4 +1,3 @@
-import { technologies } from "@/mockdata";
 import request from "../utils/request";
 import {
   AboutData,

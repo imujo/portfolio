@@ -1,7 +1,7 @@
 "use client";
-import { twoDigitNumber } from "@/utils/misc";
+// import { twoDigitNumber } from "@/utils/misc";
 import { Project as ProjectType, Technology } from "@/utils/types";
-import { FC, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
@@ -14,13 +14,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import Icon from "@/components/Icon";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
-}
-function useOpacity(value: MotionValue<number>) {
-  return useTransform(value, [0, 0.5, 1], [0, 1, 0]);
 }
 
 interface ProjectProps extends ProjectType {
