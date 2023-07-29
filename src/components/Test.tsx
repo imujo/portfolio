@@ -37,7 +37,7 @@ const Test: FC<testProps> = ({}) => {
 
   return (
     <section ref={ref} className="w-full h-[150vh] relative ">
-      <div ref={scope} className=" opacity-0  x-0">
+      <div ref={scope} className=" opacity-0">
         <motion.div
           style={{
             top: titleParallax,
