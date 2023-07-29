@@ -1,25 +1,33 @@
 import { Header, Timeline } from "@/utils/types";
 
+export type Response<T> = {} & (
+  | {
+      data: T;
+      error: null;
+    }
+  | {
+      data: null;
+      error: {
+        status: number;
+        message: string;
+      };
+    }
+);
+
 export interface HeaderData {
-  data: {
-    attributes: Header;
-  };
+  attributes: Header;
 }
 
 export interface ExperienceData {
-  data: {
-    attributes: {
-      Experience: Timeline[];
-    };
-  }[];
+  attributes: {
+    timeline: Timeline;
+  };
 }
 
 export interface EducationData {
-  data: {
-    attributes: {
-      Education: Timeline[];
-    };
-  }[];
+  attributes: {
+    timeline: Timeline;
+  };
 }
 
 export interface ImageData {
@@ -31,46 +39,40 @@ export interface ImageData {
   };
 }
 
-export interface TechnologiesData {
-  data: {
-    attributes: {
-      title: string;
-      icon: ImageData;
-      href: string;
-    };
-  }[];
+export interface TechnologyData {
+  attributes: {
+    title: string;
+    icon: ImageData | { data: null };
+    link?: string;
+  };
 }
 
 export interface AboutData {
-  data: {
-    attributes: {
-      description: string;
-      image: ImageData;
-    };
+  attributes: {
+    description: string;
+    image: ImageData;
   };
 }
 
 export interface ContactData {
-  data: {
-    attributes: {
-      title: string;
-      url: string;
-      icon: ImageData;
-    };
-  }[];
+  attributes: {
+    title: string;
+    link: string;
+    icon: ImageData;
+  };
 }
 
 export interface ProjectsData {
-  data: {
-    attributes: {
-      title: string;
-      description: string;
-      githubLink?: string;
-      websiteLink?: string;
-      technologies: TechnologiesData;
-      phoneImage: ImageData;
-      tabletImage: ImageData;
-      laptopImage: ImageData;
+  attributes: {
+    title: string;
+    description: string;
+    githubLink?: string;
+    websiteLink?: string;
+    technologies: {
+      data: TechnologyData[];
     };
-  }[];
+    phoneImage: ImageData;
+    tabletImage: ImageData;
+    laptopImage: ImageData;
+  };
 }

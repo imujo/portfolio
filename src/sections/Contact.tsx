@@ -16,10 +16,10 @@ const Contact: FC<ContactProps> = async ({}) => {
       <span className="text-center text-gray-400 mb-8">
         Send me a message and I&apos;ll be happy to reply!
       </span>
-      {contacts.map(({ icon, url, title }, i) => (
+      {contacts.map(({ icon, link, title }, i) => (
         <a
           key={i}
-          href={url}
+          href={link}
           target="_blank"
           className="text-gray-600 dark:text-gray-300 fill-gray-600 dark:fill-gray-300 flex gap-2 items-center text-lg mb-4 "
         >

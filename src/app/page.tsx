@@ -48,7 +48,7 @@ export default async function Home() {
                 LeftIcon={
                   <Icon src={tech.icon || ""} className=" w-[14px] h-[14px]" />
                 }
-                href={tech.href}
+                href={tech.link}
                 size="sm"
                 key={i}
               />
@@ -76,7 +76,7 @@ export default async function Home() {
                       className=" w-[14px] h-[14px]"
                     />
                   }
-                  href={value.href}
+                  href={value.link}
                   size="sm"
                 />
               </li>

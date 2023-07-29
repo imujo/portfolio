@@ -1,7 +1,7 @@
 export type Technology = {
   title: string;
   icon?: string;
-  href?: string;
+  link?: string;
 };
 
 export type Header = {
@@ -27,7 +27,7 @@ export type About = {
 
 export type Contact = {
   title: string;
-  url: string;
+  link: string;
   icon: string;
 };
 

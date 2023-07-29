@@ -11,7 +11,7 @@ const getIcon = async (src: string) => {
 };
 
 const Icon: FC<IconProps> = async ({ src, className }) => {
-  const html = await getIcon(src);
+  const html = src ? await getIcon(src) : "";
 
   return (
     <>

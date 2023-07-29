@@ -6,75 +6,116 @@ import {
   ExperienceData,
   HeaderData,
   ProjectsData,
-  TechnologiesData,
+  Response,
+  TechnologyData,
 } from "./types";
-import { About, Contact, Project, Technology } from "@/utils/types";
+import {
+  About,
+  Contact,
+  Header,
+  Project,
+  Technology,
+  Timeline,
+} from "@/utils/types";
 import { getFullFileUrl } from "@/utils/misc";
 
-// TODO add validation
+export async function getHeader(): Promise<Header> {
+  const headerData = await request<Response<HeaderData>>("/header");
 
-export async function getHeader() {
-  const headerData = await request<HeaderData>("/header");
+  if (!headerData.data) throw new Error("HEADER: " + headerData.error.message);
+
   const header = headerData.data.attributes;
   return header;
 }
 
 export async function getAbout(): Promise<About> {
-  const aboutData = await request<AboutData>("/about?populate=*");
-  return {
+  const aboutData = await request<Response<AboutData>>("/about?populate=*");
+  if (!aboutData.data) throw new Error("ABOUT: " + aboutData.error.message);
+
+  const about = {
     description: aboutData.data.attributes.description,
     image: getFullFileUrl(aboutData.data.attributes.image.data.attributes.url),
   };
+
+  return about;
 }
 
-export async function getExperience() {
-  const experienceData = await request<ExperienceData>(
+export async function getExperience(): Promise<Timeline[]> {
+  const experienceData = await request<Response<ExperienceData[]>>(
     "/experiences?populate=*"
   );
-  const experience = experienceData.data[0].attributes.Experience;
+  if (!experienceData.data)
+    throw new Error("EXPERIANCE: " + experienceData.error.message);
+
+  const experience = experienceData.data.map(
+    (value) => value.attributes.timeline
+  );
   return experience;
 }
 
-export async function getEducation() {
-  const educationData = await request<EducationData>("/educations?populate=*");
-  const education = educationData.data[0].attributes.Education;
+export async function getEducation(): Promise<Timeline[]> {
+  const educationData = await request<Response<EducationData[]>>(
+    "/educations?populate=*"
+  );
+
+  if (!educationData.data)
+    throw new Error("EDUCATION: " + educationData.error.message);
+
+  const education = educationData.data.map(
+    (value) => value.attributes.timeline
+  );
   return education;
 }
 
 export async function getTechnologies(): Promise<Technology[]> {
-  const technologiesData = await request<TechnologiesData>(
+  const technologyData = await request<Response<TechnologyData[]>>(
     "/technologies?populate=*"
   );
 
-  const technologies = technologiesData.data.map((technologyData) => {
+  if (!technologyData.data)
+    throw new Error("TECHNOLOGIES: " + technologyData.error.message);
+
+  const technologies = technologyData.data.map((technologyData) => {
     return {
-      href: technologyData.attributes.href,
+      link: technologyData.attributes.link,
       title: technologyData.attributes.title,
-      icon: getFullFileUrl(technologyData.attributes.icon.data?.attributes.url),
+      icon:
+        technologyData.attributes.icon.data?.attributes.url &&
+        getFullFileUrl(technologyData.attributes.icon.data?.attributes.url),
     };
   });
 
   return technologies;
 }
 
-export async function getContact() {
-  const contactData = await request<ContactData>("/contacts?populate=*");
+export async function getContact(): Promise<Contact[]> {
+  const contactData = await request<Response<ContactData[]>>(
+    "/contacts?populate=*"
+  );
 
-  const contacts: Contact[] = contactData.data.map((contact) => {
+  if (!contactData.data)
+    throw new Error("CONTACT: " + contactData.error.message);
+
+  const contacts = contactData.data.map((contact) => {
     return {
-      url: contact.attributes.url,
+      link: contact.attributes.link,
       title: contact.attributes.title,
-      icon: getFullFileUrl(contact.attributes.icon.data.attributes.url),
+      icon: getFullFileUrl(contact.attributes.icon.data.attributes.url) || "",
     };
   });
 
   return contacts;
 }
 
-export async function getProjects() {
-  const projectsData = await request<ProjectsData>("/projects?populate=deep");
+export async function getProjects(): Promise<Project[]> {
+  const projectsData = await request<Response<ProjectsData[]>>(
+    "/projects?populate=deep"
+  );
 
-  const projects: Project[] = projectsData.data.map((project) => {
+  if (!projectsData.data)
+    throw new Error("PROJECTS: " + projectsData.error.message);
+
+  const projects = projectsData.data.map((project) => {
     return {
       title: project.attributes.title,
       description: project.attributes.description,
@@ -83,11 +124,13 @@ export async function getProjects() {
       technologies: project.attributes.technologies.data.map(
         (technologyData) => {
           return {
-            href: technologyData.attributes.href,
+            link: technologyData.attributes.link,
             title: technologyData.attributes.title,
-            icon: getFullFileUrl(
-              technologyData.attributes.icon.data.attributes.url
-            ),
+            icon:
+              technologyData.attributes.icon.data?.attributes.url &&
+              getFullFileUrl(
+                technologyData.attributes.icon.data?.attributes.url
+              ),
           };
         }
       ),
