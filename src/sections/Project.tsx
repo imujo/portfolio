@@ -37,9 +37,9 @@ const Project: FC<ProjectProps> = ({
 }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const phoneParallax = useParallax(scrollYProgress, 200);
-  const tabletParallax = useParallax(scrollYProgress, 600);
-  const laptopParallax = useParallax(scrollYProgress, 500);
+  const phoneParallax = useParallax(scrollYProgress, 400);
+  const tabletParallax = useParallax(scrollYProgress, 800);
+  const laptopParallax = useParallax(scrollYProgress, 600);
 
   // const scale = 2;
   // console.log({
