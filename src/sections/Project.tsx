@@ -53,9 +53,17 @@ const Project: FC<ProjectProps> = ({
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (scrollYProgress.get() > 0.8 || scrollYProgress.get() < 0.1) {
       console.log("animate");
-      animate(scope.current, { opacity: 0 }, { duration: 0.2 });
+      animate(
+        scope.current,
+        { opacity: 0, x: -30, y: "-50%" },
+        { duration: 0.2 }
+      );
     } else {
-      animate(scope.current, { opacity: 1 }, { duration: 0.2 });
+      animate(
+        scope.current,
+        { opacity: 1, x: 0, y: "-50%" },
+        { duration: 0.2 }
+      );
     }
   });
 
@@ -63,63 +71,54 @@ const Project: FC<ProjectProps> = ({
 
   return (
     <section ref={ref} className="h-[150svh]  w-full relative ">
-      <div ref={scope} className="opacity-0">
-        <motion.div
-          style={{
-            top: titleParallax,
-            position: "absolute",
-            left: "10%",
-            marginTop: "20%",
-          }}
-        >
-          <div className=" flex flex-col xl:flex-row xl:justify-between items-center justify-center gap-12 ">
-            <div className="flex items-center xl:items-start flex-col">
-              <h3 className="text-center xl:text-start font-semibold text-2xl md:text-3xl xl:mb-4 text-gray-800 dark:text-white mb-2">
-                {title}
-              </h3>
-              <p className=" text-center xl:max-w-xs xl:text-start text-gray-500 md:text-base mb-6 max-w-md dark:text-gray-400 text-sm ">
-                {description}
-              </p>
-              <ul className="flex gap-2 flex-wrap justify-center xl:justify-start xl:max-w-xs mb-6 ">
-                {technologyTags}
-              </ul>
+      <div ref={scope} className="opacity-0 top-1/2 left-10%  fixed">
+        <div className=" flex flex-col xl:flex-row xl:justify-between items-center justify-center gap-12 ">
+          <div className="flex items-center xl:items-start flex-col">
+            <h3 className="text-center xl:text-start font-semibold text-2xl md:text-3xl xl:mb-4 text-gray-800 dark:text-white mb-2">
+              {title}
+            </h3>
+            <p className=" text-center xl:max-w-xs xl:text-start text-gray-500 md:text-base mb-6 max-w-md dark:text-gray-400 text-sm ">
+              {description}
+            </p>
+            <ul className="flex gap-2 flex-wrap justify-center xl:justify-start xl:max-w-xs mb-6 ">
+              {technologyTags}
+            </ul>
 
-              <hr className="mb-2 xl:mb-4 w-4/5 border-gray-200 dark:border-gray-700 xl:w-full " />
-              <ul className="flex justify-around w-4/5 xl:w-full xl:justify-start xl:gap-6 ">
-                {githubLink ? (
-                  <li>
-                    <a
-                      href={githubLink}
-                      target="_blank"
-                      className="flex items-center gap-2 text-gray-800 dark:text-gray-300 text-sm"
-                    >
-                      <BsGithub /> Github
-                    </a>
-                  </li>
-                ) : null}
-                {websiteLink ? (
-                  <li>
-                    <a
-                      href={websiteLink}
-                      target="_blank"
-                      className="flex items-center gap-2 text-gray-800 dark:text-gray-300 text-sm"
-                    >
-                      Website <BiLinkExternal />
-                    </a>
-                  </li>
-                ) : null}
+            <hr className="mb-2 xl:mb-4 w-4/5 border-gray-200 dark:border-gray-700 xl:w-full " />
+            <ul className="flex justify-around w-4/5 xl:w-full xl:justify-start xl:gap-6 ">
+              {githubLink ? (
                 <li>
-                  <Link
-                    href="/"
+                  <a
+                    href={githubLink}
+                    target="_blank"
                     className="flex items-center gap-2 text-gray-800 dark:text-gray-300 text-sm"
                   >
-                    Details <FiLink />
-                  </Link>
+                    <BsGithub /> Github
+                  </a>
                 </li>
-              </ul>
-            </div>
+              ) : null}
+              {websiteLink ? (
+                <li>
+                  <a
+                    href={websiteLink}
+                    target="_blank"
+                    className="flex items-center gap-2 text-gray-800 dark:text-gray-300 text-sm"
+                  >
+                    Website <BiLinkExternal />
+                  </a>
+                </li>
+              ) : null}
+              <li>
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 text-gray-800 dark:text-gray-300 text-sm"
+                >
+                  Details <FiLink />
+                </Link>
+              </li>
+            </ul>
           </div>
-        </motion.div>
+        </div>
       </div>
       <DeviceImage
         link={phoneImage}
