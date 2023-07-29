@@ -17,7 +17,7 @@ import {
   Technology,
   Timeline,
 } from "@/utils/types";
-import { getFullFileUrl } from "@/utils/misc";
+import {} from "@/utils/misc";
 
 export async function getHeader(): Promise<Header> {
   const headerData = await request<Response<HeaderData>>("/header");
@@ -34,7 +34,7 @@ export async function getAbout(): Promise<About> {
 
   const about = {
     description: aboutData.data.attributes.description,
-    image: getFullFileUrl(aboutData.data.attributes.image.data.attributes.url),
+    image: aboutData.data.attributes.image.data.attributes.url,
   };
 
   return about;
@@ -81,7 +81,7 @@ export async function getTechnologies(): Promise<Technology[]> {
       title: technologyData.attributes.title,
       icon:
         technologyData.attributes.icon.data?.attributes.url &&
-        getFullFileUrl(technologyData.attributes.icon.data?.attributes.url),
+        technologyData.attributes.icon.data?.attributes.url,
     };
   });
 
@@ -100,7 +100,7 @@ export async function getContact(): Promise<Contact[]> {
     return {
       link: contact.attributes.link,
       title: contact.attributes.title,
-      icon: getFullFileUrl(contact.attributes.icon.data.attributes.url) || "",
+      icon: contact.attributes.icon.data.attributes.url || "",
     };
   });
 
@@ -128,21 +128,13 @@ export async function getProjects(): Promise<Project[]> {
             title: technologyData.attributes.title,
             icon:
               technologyData.attributes.icon.data?.attributes.url &&
-              getFullFileUrl(
-                technologyData.attributes.icon.data?.attributes.url
-              ),
+              technologyData.attributes.icon.data?.attributes.url,
           };
         }
       ),
-      phoneImage: getFullFileUrl(
-        project.attributes.phoneImage.data.attributes.url
-      ),
-      tabletImage: getFullFileUrl(
-        project.attributes.tabletImage.data.attributes.url
-      ),
-      laptopImage: getFullFileUrl(
-        project.attributes.laptopImage.data.attributes.url
-      ),
+      phoneImage: project.attributes.phoneImage.data.attributes.url,
+      tabletImage: project.attributes.tabletImage.data.attributes.url,
+      laptopImage: project.attributes.laptopImage.data.attributes.url,
     };
   });
 
