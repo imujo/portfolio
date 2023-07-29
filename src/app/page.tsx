@@ -37,9 +37,7 @@ export default async function Home() {
         </div>
       </section>
       <section className="mt-16 lg:mt-32">
-        <SectionHeading id="technologies" className=" scroll-mt-[50vh]">
-          Technologies
-        </SectionHeading>
+        <SectionHeading id="technologies">Technologies</SectionHeading>
         <div className=" flex flex-wrap gap-2 lg:gap-3">
           {technologies.map((tech, i) => (
             <Tag
