@@ -51,19 +51,10 @@ const Project: FC<ProjectProps> = ({
   const titleParallax = useSticky(scrollYProgress);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (scrollYProgress.get() > 0.8 || scrollYProgress.get() < 0.1) {
-      console.log("animate");
-      animate(
-        scope.current,
-        { opacity: 0, x: -30, y: "-50%" },
-        { duration: 0.2 }
-      );
+    if (scrollYProgress.get() > 0.8 || scrollYProgress.get() < 0.01) {
+      animate(scope.current, { opacity: 0, x: -30 }, { duration: 0.2 });
     } else {
-      animate(
-        scope.current,
-        { opacity: 1, x: 0, y: "-50%" },
-        { duration: 0.2 }
-      );
+      animate(scope.current, { opacity: 1, x: 0 }, { duration: 0.2 });
     }
   });
 
@@ -71,21 +62,24 @@ const Project: FC<ProjectProps> = ({
 
   return (
     <section ref={ref} className="h-[150svh]  w-full relative ">
-      <div ref={scope} className="opacity-0 top-1/2 left-10%  fixed">
-        <div className=" flex flex-col xl:flex-row xl:justify-between items-center justify-center gap-12 ">
-          <div className="flex items-center xl:items-start flex-col">
-            <h3 className="text-center xl:text-start font-semibold text-2xl md:text-3xl xl:mb-4 text-gray-800 dark:text-white mb-2">
+      <div
+        ref={scope}
+        className="opacity-0 top-[15%] md:top-1/4 w-full flex justify-center max-w-[90%] lg:w-auto  lg:h-full lg:top-0 fixed"
+      >
+        <div className=" flex flex-col lg:flex-row lg:justify-between items-center justify-center gap-12 ">
+          <div className="flex items-center lg:items-start flex-col">
+            <h3 className="text-center lg:text-start font-semibold text-2xl md:text-3cl lg:mb-4 text-gray-800 dark:text-white mb-2">
               {title}
             </h3>
-            <p className=" text-center xl:max-w-xs xl:text-start text-gray-500 md:text-base mb-6 max-w-md dark:text-gray-400 text-sm ">
+            <p className=" text-center max-w-xs lg:max-w-xs lg:text-start text-gray-500 md:text-base mb-6 dark:text-gray-400 text-sm ">
               {description}
             </p>
-            <ul className="flex gap-2 flex-wrap justify-center xl:justify-start xl:max-w-xs mb-6 ">
+            <ul className="flex gap-2 flex-wrap justify-center lg:justify-start lg:max-w-xs mb-6 ">
               {technologyTags}
             </ul>
 
-            <hr className="mb-2 xl:mb-4 w-4/5 border-gray-200 dark:border-gray-700 xl:w-full " />
-            <ul className="flex justify-around w-4/5 xl:w-full xl:justify-start xl:gap-6 ">
+            <hr className="mb-2 lg:mb-4 w-4/5 border-gray-200 dark:border-gray-700 lg:w-full " />
+            <ul className="flex justify-around w-4/5 lg:w-full lg:justify-start lg:gap-6 ">
               {githubLink ? (
                 <li>
                   <a
