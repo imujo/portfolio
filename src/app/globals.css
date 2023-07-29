@@ -136,3 +136,15 @@
     height: 290px;
   }
 }
+
+.phonex {
+  position: absolute;
+  background-color: transparent;
+}
+
+.phonex > div {
+  position: relative;
+  background-color: transparent;
+  height: 100%;
+  aspect-ratio: 11 / 19;
+}
