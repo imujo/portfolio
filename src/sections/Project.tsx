@@ -48,7 +48,7 @@ const Project: FC<ProjectProps> = ({
   //   laptop: `h: ${145 * scale} w: ${110 * scale}`,
   // });
   return (
-    <section className="h-[100svh]  w-full snap-start snap-always flex justify-center items-center ">
+    <section className="h-[100svh]  w-full  flex justify-center items-center ">
       {/* <span className="absolute top-6 left-6 font-black text-lg xl:text-xl xl:top-8 xl:left-8 ">
         <span className=" text-gray-700 dark:text-slate-100">
           {twoDigitNumber(index + 1)}
