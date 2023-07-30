@@ -57,7 +57,6 @@ export default async function Home() {
 
         {projects.map((project, i) => (
           <Project
-            index={i}
             {...project}
             key={i}
             technologyTags={project.technologies.slice(0, 4).map((value, i) => {

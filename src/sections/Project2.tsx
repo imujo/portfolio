@@ -20,7 +20,6 @@ function useParallax(value: MotionValue<number>, distance: number) {
 }
 
 interface ProjectProps extends ProjectType {
-  index: number;
   technologyTags: React.ReactNode;
 }
 
@@ -30,10 +29,10 @@ const Project: FC<ProjectProps> = ({
   githubLink,
   websiteLink,
   technologyTags,
-  phoneImage,
-  tabletImage,
-  laptopImage,
-  index,
+  phoneXl,
+  phoneLg,
+  phoneMd,
+  phoneSm,
 }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
@@ -111,19 +110,19 @@ const Project: FC<ProjectProps> = ({
             style={{ y: phoneParallax, x: "-220%", zIndex: 1 }}
             className="phone "
           >
-            <Image src={phoneImage} alt="phone" fill />
+            <Image src={phoneXl} alt="phone" fill />
           </motion.div>
           <motion.div
             style={{ y: laptopParallax, x: "-50%", zIndex: 2 }}
             className=" laptop"
           >
-            <Image src={laptopImage} alt="laptop" fill />
+            <Image src={phoneLg} alt="laptop" fill />
           </motion.div>
           <motion.div
             style={{ y: tabletParallax, x: "55%", zIndex: 3 }}
             className="tablet  "
           >
-            <Image src={tabletImage} alt="tablet" fill />
+            <Image src={phoneMd} alt="tablet" fill />
           </motion.div>
           <div className="w-4/5 h-4/5 absolute top-0 left-0 absolute-center bblur"></div>
         </div>
