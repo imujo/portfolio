@@ -1,22 +1,17 @@
 "use client";
-// import { twoDigitNumber } from "@/utils/misc";
-import { Project as ProjectType, Technology } from "@/utils/types";
+import { Project as ProjectType } from "@/utils/types";
 import { FC, useRef } from "react";
-import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 import { FiLink } from "react-icons/fi";
 import Link from "next/link";
 import {
   MotionValue,
-  motion,
   useAnimate,
   useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
-import useScreenSize from "@/hooks/useScreenSize";
-import useSticky from "@/hooks/useSticky";
 import DeviceImage from "@/components/DeviceImage";
 import { deviceLayout } from "@/utils/deviceLayout";
 
@@ -48,17 +43,13 @@ const Project: FC<ProjectProps> = ({
     offset: ["start start", "end start"],
   });
 
-  const titleParallax = useSticky(scrollYProgress);
-
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (scrollYProgress.get() > 0.8 || scrollYProgress.get() < 0.01) {
+    if (latest > 0.8 || latest < 0.01) {
       animate(scope.current, { opacity: 0, x: -30 }, { duration: 0.2 });
     } else {
       animate(scope.current, { opacity: 1, x: 0 }, { duration: 0.2 });
     }
   });
-
-  const screenSize = useScreenSize();
 
   return (
     <section ref={ref} className="h-[150svh]  w-full relative ">
@@ -119,28 +110,24 @@ const Project: FC<ProjectProps> = ({
         scrollYProgress={scrollYProgress}
         zIndex={4}
         size={deviceLayout.xl}
-        screenSize={screenSize}
       />
       <DeviceImage
         link={phoneImage}
         scrollYProgress={scrollYProgress}
         zIndex={3}
         size={deviceLayout.lg}
-        screenSize={screenSize}
       />
       <DeviceImage
         link={phoneImage}
         scrollYProgress={scrollYProgress}
         zIndex={2}
         size={deviceLayout.md}
-        screenSize={screenSize}
       />
       <DeviceImage
         link={phoneImage}
         scrollYProgress={scrollYProgress}
         zIndex={1}
         size={deviceLayout.sm}
-        screenSize={screenSize}
       />
     </section>
   );

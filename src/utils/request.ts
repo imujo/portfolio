@@ -4,7 +4,6 @@ export default async function request<T>(
 ): Promise<T> {
   if (!process.env.SERVER_ENDPOINT)
     throw new Error("No .env variable SERVER_ENDPOINT found!");
-  console.log(process.env.SERVER_ENDPOINT + url);
 
   return fetch(process.env.SERVER_ENDPOINT + url, {
     next: { revalidate: 1 },

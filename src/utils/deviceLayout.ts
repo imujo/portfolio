@@ -31,7 +31,7 @@ export const deviceLayout: DeviceLayout = {
         width: 300,
       },
       lg: {
-        left: 50,
+        left: 45,
         width: 300,
       },
       md: {

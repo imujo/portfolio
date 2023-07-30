@@ -25,6 +25,7 @@ const About: FC<AboutProps> = async () => {
             src={image}
             alt={"me"}
             className="z-[2] rounded-lg object-cover "
+            sizes="(min-width: 768px) 45vw, 90vw"
             fill
           />
           <div className="absolute h-full w-full rounded-lg bg-emerald-600 bottom-[-1rem] md:left-[-1rem] "></div>

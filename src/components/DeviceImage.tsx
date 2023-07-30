@@ -1,7 +1,8 @@
+"use client";
 import { MotionValue, motion, useSpring } from "framer-motion";
 import { FC } from "react";
 import Image from "next/image";
-import { ScreenSize } from "@/hooks/useScreenSize";
+import useScreenSize from "@/hooks/useScreenSize";
 import { DeviceSize } from "@/utils/deviceLayout";
 import { useParallax } from "@/hooks/useParallax";
 
@@ -10,7 +11,6 @@ interface DeviceImageProps {
   size: DeviceSize;
   zIndex: number;
   scrollYProgress: MotionValue<number>;
-  screenSize: ScreenSize;
 }
 
 const DeviceImage: FC<DeviceImageProps> = ({
@@ -18,8 +18,8 @@ const DeviceImage: FC<DeviceImageProps> = ({
   size,
   zIndex,
   scrollYProgress,
-  screenSize,
 }) => {
+  const screenSize = useScreenSize();
   const parallax = useParallax(scrollYProgress, size.speed);
   const springParallax = useSpring(parallax, {
     stiffness: 150,
@@ -27,7 +27,8 @@ const DeviceImage: FC<DeviceImageProps> = ({
     restDelta: 0.001,
   });
 
-  console.log(size.size[screenSize]);
+  if (!screenSize) return <h1>Loading...</h1>;
+
   return (
     <motion.div
       style={{
@@ -39,7 +40,12 @@ const DeviceImage: FC<DeviceImageProps> = ({
       className="phonex "
     >
       <div style={{ width: `${size.size[screenSize].width}px` }}>
-        <Image src={link} alt="phone" fill />
+        <Image
+          src={link}
+          alt="phone"
+          fill
+          sizes="(min-width: 1024px) 40vw, 20vw"
+        />
       </div>
     </motion.div>
   );

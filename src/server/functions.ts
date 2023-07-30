@@ -42,7 +42,7 @@ export async function getAbout(): Promise<About> {
 
 export async function getExperience(): Promise<Timeline[]> {
   const experienceData = await request<Response<ExperienceData[]>>(
-    "/experiences?populate=*"
+    "/experiences?populate=*&sort=rank"
   );
   if (!experienceData.data)
     throw new Error("EXPERIANCE: " + experienceData.error.message);
@@ -55,7 +55,7 @@ export async function getExperience(): Promise<Timeline[]> {
 
 export async function getEducation(): Promise<Timeline[]> {
   const educationData = await request<Response<EducationData[]>>(
-    "/educations?populate=*"
+    "/educations?populate=*&sort=rank"
   );
 
   if (!educationData.data)
@@ -69,7 +69,7 @@ export async function getEducation(): Promise<Timeline[]> {
 
 export async function getTechnologies(): Promise<Technology[]> {
   const technologyData = await request<Response<TechnologyData[]>>(
-    "/technologies?populate=*"
+    "/technologies?populate=*&sort=rank"
   );
 
   if (!technologyData.data)
@@ -90,7 +90,7 @@ export async function getTechnologies(): Promise<Technology[]> {
 
 export async function getContact(): Promise<Contact[]> {
   const contactData = await request<Response<ContactData[]>>(
-    "/contacts?populate=*"
+    "/contacts?populate=*&sort=rank"
   );
 
   if (!contactData.data)
@@ -109,7 +109,7 @@ export async function getContact(): Promise<Contact[]> {
 
 export async function getProjects(): Promise<Project[]> {
   const projectsData = await request<Response<ProjectsData[]>>(
-    "/projects?populate=deep"
+    "/projects?populate=deep&sort=rank"
   );
 
   if (!projectsData.data)

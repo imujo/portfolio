@@ -26,7 +26,6 @@ const Test: FC<testProps> = ({}) => {
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (scrollYProgress.get() > 0.8 || scrollYProgress.get() < 0.1) {
-      console.log("animate");
       animate(scope.current, { opacity: 0 }, { duration: 0.2 });
     } else {
       animate(scope.current, { opacity: 1 }, { duration: 0.2 });

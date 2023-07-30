@@ -1,8 +1,11 @@
+"use client";
 import { useMediaQuery } from "react-responsive";
 
 export type ScreenSize = "2xl" | "xl" | "lg" | "md" | "sm" | "xs";
 
 export default function useScreenSize() {
+  if (!window) return null;
+
   const xxl = useMediaQuery({ minWidth: 1536 });
   const xl = useMediaQuery({ minWidth: 1280 });
   const lg = useMediaQuery({ minWidth: 1024 });
