@@ -20,7 +20,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className=" px-6  max-w-5xl m-auto h-full">
+    <main className=" px-6  max-w-5xl   m-auto h-full">
       <Header />
       <section className="flex lg:[&>div]:flex-1 gap-4 lg:items-start lg:justify-between flex-col lg:flex-row lg:mt-8   ">
         <div>

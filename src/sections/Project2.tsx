@@ -7,13 +7,7 @@ import { BsGithub } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 import { FiLink } from "react-icons/fi";
 import Link from "next/link";
-import {
-  MotionValue,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
