@@ -45,17 +45,30 @@ const Project: FC<ProjectProps> = ({
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (latest > 0.8 || latest < 0.01) {
-      animate(scope.current, { opacity: 0, x: -30 }, { duration: 0.2 });
+      animate(
+        scope.current,
+        { x: -30, opacity: 0, pointerEvents: "none" },
+        { duration: 0.2 }
+      );
     } else {
-      animate(scope.current, { opacity: 1, x: 0 }, { duration: 0.2 });
+      animate(
+        scope.current,
+        { x: 0, opacity: 1, pointerEvents: "auto" },
+        { duration: 0.2 }
+      );
     }
   });
 
+  console.log(websiteLink);
+
   return (
-    <section ref={ref} className="h-[150svh]  w-full relative ">
+    <section
+      ref={ref}
+      className="h-[150svh] pointer-events-none w-full relative "
+    >
       <div
         ref={scope}
-        className="opacity-0 top-[15%] md:top-1/4 w-full flex justify-center max-w-[90%] lg:w-auto  lg:h-full lg:top-0 fixed"
+        className=" top-[15%] pointer-events-none opacity-0 flex md:top-1/4 w-full justify-center max-w-[90%] lg:w-auto  lg:h-full lg:top-0 fixed"
       >
         <div className=" flex flex-col lg:flex-row lg:justify-between items-center justify-center gap-12 ">
           <div className="flex items-center lg:items-start flex-col">
