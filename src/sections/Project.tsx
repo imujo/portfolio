@@ -59,8 +59,6 @@ const Project: FC<ProjectProps> = ({
     }
   });
 
-  console.log(websiteLink);
-
   return (
     <section
       ref={ref}

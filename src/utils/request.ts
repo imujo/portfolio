@@ -4,7 +4,6 @@ export default async function request<T>(
   url: string,
   config: RequestInit = {}
 ): Promise<T> {
-  console.log("\n\n\n");
   if (!process.env.SERVER_ENDPOINT)
     throw new Error("No .env variable SERVER_ENDPOINT found!");
 
