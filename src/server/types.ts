@@ -71,8 +71,9 @@ export interface ProjectsData {
     technologies: {
       data: TechnologyData[];
     };
-    phoneImage: ImageData;
-    tabletImage: ImageData;
-    laptopImage: ImageData;
+    phoneXl: ImageData;
+    phoneLg: ImageData;
+    phoneMd: ImageData;
+    phoneSm: ImageData;
   };
 }

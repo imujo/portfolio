@@ -132,9 +132,10 @@ export async function getProjects(): Promise<Project[]> {
           };
         }
       ),
-      phoneImage: project.attributes.phoneImage.data.attributes.url,
-      tabletImage: project.attributes.tabletImage.data.attributes.url,
-      laptopImage: project.attributes.laptopImage.data.attributes.url,
+      phoneXl: project.attributes.phoneXl.data.attributes.url,
+      phoneLg: project.attributes.phoneLg.data.attributes.url,
+      phoneMd: project.attributes.phoneMd.data.attributes.url,
+      phoneSm: project.attributes.phoneSm.data.attributes.url,
     };
   });
 

@@ -37,7 +37,8 @@ export type Project = {
   githubLink?: string;
   websiteLink?: string;
   technologies: Technology[];
-  phoneImage: string;
-  tabletImage: string;
-  laptopImage: string;
+  phoneXl: string;
+  phoneLg: string;
+  phoneMd: string;
+  phoneSm: string;
 };

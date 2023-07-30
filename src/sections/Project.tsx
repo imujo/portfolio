@@ -5,22 +5,11 @@ import { BsGithub } from "react-icons/bs";
 import { BiLinkExternal } from "react-icons/bi";
 import { FiLink } from "react-icons/fi";
 import Link from "next/link";
-import {
-  MotionValue,
-  useAnimate,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import DeviceImage from "@/components/DeviceImage";
 import { deviceLayout } from "@/utils/deviceLayout";
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
 interface ProjectProps extends ProjectType {
-  index: number;
   technologyTags: React.ReactNode;
 }
 
@@ -30,10 +19,10 @@ const Project: FC<ProjectProps> = ({
   githubLink,
   websiteLink,
   technologyTags,
-  phoneImage,
-  tabletImage,
-  laptopImage,
-  index,
+  phoneXl,
+  phoneLg,
+  phoneMd,
+  phoneSm,
 }) => {
   const [scope, animate] = useAnimate();
   const ref = useRef(null);
@@ -117,25 +106,25 @@ const Project: FC<ProjectProps> = ({
         </div>
       </div>
       <DeviceImage
-        link={phoneImage}
+        link={phoneXl}
         scrollYProgress={scrollYProgress}
         zIndex={4}
         size={deviceLayout.xl}
       />
       <DeviceImage
-        link={phoneImage}
+        link={phoneLg}
         scrollYProgress={scrollYProgress}
         zIndex={3}
         size={deviceLayout.lg}
       />
       <DeviceImage
-        link={phoneImage}
+        link={phoneMd}
         scrollYProgress={scrollYProgress}
         zIndex={2}
         size={deviceLayout.md}
       />
       <DeviceImage
-        link={phoneImage}
+        link={phoneSm}
         scrollYProgress={scrollYProgress}
         zIndex={1}
         size={deviceLayout.sm}
