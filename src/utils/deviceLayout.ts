@@ -27,7 +27,7 @@ export const deviceLayout: DeviceLayout = {
         width: 300,
       },
       xl: {
-        left: 50,
+        left: 45,
         width: 300,
       },
       lg: {
@@ -35,16 +35,16 @@ export const deviceLayout: DeviceLayout = {
         width: 300,
       },
       md: {
-        left: 50,
+        left: 5,
         width: 300,
       },
       sm: {
-        left: 50,
-        width: 300,
+        left: 5,
+        width: 270,
       },
       xs: {
-        left: 50,
-        width: 300,
+        left: -5,
+        width: 200,
       },
     },
   },
@@ -65,16 +65,16 @@ export const deviceLayout: DeviceLayout = {
         width: 270,
       },
       md: {
-        left: 75,
+        left: 50,
         width: 270,
       },
       sm: {
-        left: 75,
-        width: 270,
+        left: 55,
+        width: 240,
       },
       xs: {
-        left: 75,
-        width: 270,
+        left: 54,
+        width: 170,
       },
     },
   },
@@ -95,16 +95,16 @@ export const deviceLayout: DeviceLayout = {
         width: 250,
       },
       md: {
-        left: 50,
+        left: 25,
         width: 250,
       },
       sm: {
-        left: 50,
-        width: 250,
+        left: 12,
+        width: 220,
       },
       xs: {
-        left: 50,
-        width: 250,
+        left: 5,
+        width: 160,
       },
     },
   },
@@ -125,16 +125,16 @@ export const deviceLayout: DeviceLayout = {
         width: 230,
       },
       md: {
-        left: 75,
+        left: 65,
         width: 230,
       },
       sm: {
-        left: 75,
-        width: 230,
+        left: 60,
+        width: 190,
       },
       xs: {
-        left: 75,
-        width: 230,
+        left: 60,
+        width: 130,
       },
     },
   },

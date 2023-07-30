@@ -27,6 +27,7 @@ const DeviceImage: FC<DeviceImageProps> = ({
     restDelta: 0.001,
   });
 
+  console.log(size.size[screenSize]);
   return (
     <motion.div
       style={{
@@ -37,7 +38,7 @@ const DeviceImage: FC<DeviceImageProps> = ({
       }}
       className="phonex "
     >
-      <div style={{ width: size.size.xl.width }}>
+      <div style={{ width: `${size.size[screenSize].width}px` }}>
         <Image src={link} alt="phone" fill />
       </div>
     </motion.div>
