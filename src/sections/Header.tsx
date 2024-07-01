@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import HeaderImage from "@/components/HeaderImage";
 import { getHeader } from "@/server/functions";
+import Link from "next/link";
 import { FC } from "react";
 import { IoSend } from "react-icons/io5";
 
@@ -12,6 +13,7 @@ const Header: FC<HeaderProps> = async ({}) => {
   return (
     <header className="relative flex flex-col py-12 gap-12 lg:gap-16 items-center  h-[calc(100vh-4rem)] lg:flex-row-reverse lg:justify-between lg:items-center min-h-[800px] lg:min-h-[600px]  ">
       <HeaderImage />
+      <Link href="/admin">Admin</Link>
       <div className="flex flex-col items-center lg:items-start">
         <h1 className=" text-6xl font-bold text-center text-gray-800 mb-4 dark:text-white lg:text-start ">
           {name}

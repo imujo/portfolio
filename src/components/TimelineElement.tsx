@@ -1,15 +1,16 @@
+import { Experience } from "@/payload-types";
 import { cn } from "@/utils/misc";
-import { Timeline } from "@/utils/types";
 import { FC } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 
-interface TimelineElementProps extends Timeline {
+type TimelineItem = NonNullable<Experience["timelineItems"]>[number];
+
+interface TimelineElementProps extends TimelineItem {
   first?: boolean;
   className?: string;
 }
 
 const TimelineElement: FC<TimelineElementProps> = ({
-  id,
   from,
   to,
   title,
@@ -18,17 +19,15 @@ const TimelineElement: FC<TimelineElementProps> = ({
   description,
   className,
   first,
-  ...rest
 }) => {
   return (
     <a
-      href={link || ""}
+      href={!!link ? link : ""}
       target="_blank"
       className={cn(
         "flex flex-col p-6 relative rounded-2xl hover:shadow-md [&>h4]:hover:text-blue-700 dark:shadow-white/10 dark:[&>h4]:hover:text-blue-600 transition-all cursor-pointer ml-10 ",
         className
       )}
-      {...rest}
     >
       <span className="mb-3 font-semibold text-sm text-gray-400 ">
         {from} - {to}

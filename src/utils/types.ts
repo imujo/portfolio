@@ -11,13 +11,12 @@ export type Header = {
 };
 
 export type Timeline = {
-  id: number;
   from: string;
   to: string;
   title: string;
   subtitle: string;
-  description?: string;
-  link?: string;
+  description?: string | null;
+  link?: string | null;
 };
 
 export type About = {
